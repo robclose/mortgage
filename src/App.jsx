@@ -47,12 +47,12 @@ function App() {
       <div className="container py-4">
        <h2>Close Mortgage Obliterator</h2>
      <div className="row">
-      <div className="col-10">
+      <div className="col-sm-10">
      <Chart
         mortgage = { mortgage }
      />
      </div>
-     <div className="col-2">
+     <div className="col-6 col-sm-2">
       <TodayPanel 
           mortgage={ mortgage } />
       <Obliteration mortgage={ mortgage } />
@@ -60,20 +60,20 @@ function App() {
       </div>
      </div>
      <div className="row mt-5">
-      <div className="col-3">
+      <div className="col-sm-3 mb-5">
         <ThisPanel 
           mortgage={ mortgage } 
           handlePayment={ handleTodayPayment }
           payment={ todayPayment }/>
       </div>
-      <div className="col-3">
+      <div className="col-sm-3 mb-5">
         <NextPanel mortgage={ mortgage }
         handlePayment={ handleNextPayment } 
         payment={ nextPayment }
         interest={ interest }
         handleInterest={ handleInterest }/>
       </div>
-      <div className="col-6">
+      <div className="col-sm-6 mb-5">
         <OneOffPanel 
         oneOffs = { oneOffs }
         handleSubmit={ handleOneOffForm } 
