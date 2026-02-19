@@ -6,7 +6,6 @@ export default function ThisPanel ({ mortgage, handlePayment, payment }) {
 
     return(
         <>
-         <h4>This fix period</h4>
         <p className="mb-1">{ `${thisPeriod.startDate.toISOString().slice(0,7)} to ${thisPeriod.endDate.toISOString().slice(0,7)}` }</p>
         <label htmlFor="tinterest" className="form-label">Overpayment £</label>
         <input id="tinterest"

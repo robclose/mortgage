@@ -9,7 +9,6 @@ export default function TodayPanel ({ mortgage }) {
 
     return(
         <>
-         <h4>This month</h4>
          <p className="mb-1">Date: { showDate }</p>
         <p className="mb-1">Balance: £{ showBalance }</p>
         <p className="mb-1">Remaining: { Math.round(showPercent * 100) }%</p>

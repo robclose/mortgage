@@ -1,0 +1,49 @@
+.app-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.tiles-grid {
+  display: grid;
+  grid-template-columns: 1fr,  1fr;
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.chart-tile {
+    grid-column:  span 2;
+    grid-row: span 2;
+  }
+
+@media (min-width: 1200px) {
+  .tiles-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .chart-tile {
+    grid-column: span 3;
+  }
+}
+
+.oneoff-tile {
+  grid-row: span 2;
+}
+
+.tile {
+  background: white;
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.tile h3 {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+  color: #444;
+  border-bottom: 2px solid grey;
+  padding-bottom: 0.75rem;
+}
+
+

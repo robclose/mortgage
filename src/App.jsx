@@ -6,6 +6,7 @@ import NextPanel from './NextPanel';
 import Obliteration from './Obliteration';
 import ThisPanel from './ThisPanel';
 import OneOffPanel from './OneOffPanel';
+import './App.css';
 
 function App() {
   const [interest, setInterest] = useState(4);
@@ -43,45 +44,56 @@ function App() {
   }
 
   return (
-    <>
-      <div className="container py-4">
-       <h2>Close Mortgage Obliterator</h2>
-     <div className="row">
-      <div className="col-sm-10">
-     <Chart
-        mortgage = { mortgage }
-     />
-     </div>
-     <div className="col-6 col-sm-2">
-      <TodayPanel 
-          mortgage={ mortgage } />
-      <Obliteration mortgage={ mortgage } />
+    <div className="app-container">
+      <div className="app-header">
+        <h2>Close Mortgage Obliterator</h2>
+      </div>
       
+      <div className="tiles-grid">
+        <div className="tile chart-tile">
+          <Chart mortgage={ mortgage } />
+        </div>
+        
+        
+        
+        <div className="tile">
+          <h3>End</h3>
+          <Obliteration mortgage={ mortgage } />
+        </div>
+
+        <div className="tile oneoff-tile">
+          <h3>One-Off Payments</h3>
+          <OneOffPanel 
+            oneOffs={ oneOffs }
+            handleSubmit={ handleOneOffForm } 
+            handleDelete={ handleOneOffDelete }/>
+        </div>
+        <div className="tile">
+          <h3>Today</h3>
+          <TodayPanel mortgage={ mortgage } />
+        </div>
+
+        <div className="tile">
+          <h3>This Fix Period</h3>
+          <ThisPanel 
+            mortgage={ mortgage } 
+            handlePayment={ handleTodayPayment }
+            payment={ todayPayment }/>
+        </div>
+
+        <div className="tile">
+          <h3>Next Fix Period</h3>
+          <NextPanel 
+            mortgage={ mortgage }
+            handlePayment={ handleNextPayment } 
+            payment={ nextPayment }
+            interest={ interest }
+            handleInterest={ handleInterest }/>
+        </div>
+
+        
       </div>
-     </div>
-     <div className="row mt-5">
-      <div className="col-sm-4 mb-5">
-        <ThisPanel 
-          mortgage={ mortgage } 
-          handlePayment={ handleTodayPayment }
-          payment={ todayPayment }/>
-      </div>
-      <div className="col-sm-4 mb-5">
-        <NextPanel mortgage={ mortgage }
-        handlePayment={ handleNextPayment } 
-        payment={ nextPayment }
-        interest={ interest }
-        handleInterest={ handleInterest }/>
-      </div>
-      <div className="col-sm-4 mb-5">
-        <OneOffPanel 
-        oneOffs = { oneOffs }
-        handleSubmit={ handleOneOffForm } 
-        handleDelete={ handleOneOffDelete }/>
-      </div>
-     </div>
-      </div>
-    </>
+    </div>
   )
 }
 

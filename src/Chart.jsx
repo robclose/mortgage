@@ -39,7 +39,7 @@ function Chart ({ mortgage }) {
     type: 'line',
     labels: mortgage[0].labels,
     datasets: [{
-        label: 'Original flightpath ' + mortgage[0].rate.annual * 100,
+        label: 'Original',
         data: mortgage[0].series.flightpath
     },
     { 
@@ -65,7 +65,7 @@ function Chart ({ mortgage }) {
     },
     { 
     type: 'line',
-    label: 'Future Scenario',
+    label: 'Future',
     data: mortgage[3].series.actual,
     borderColor: 'hsl(330, 100%, 50%)',
     backgroundColor: 'hsla(330, 100%, 50%, 0.5)',

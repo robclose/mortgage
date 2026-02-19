@@ -5,7 +5,6 @@ let showBase = mortgage.at(-1).monthlyPayment;
 
     return (
         <>
-        <h4>Next fix period</h4>
          <p className="mb-1">{ showDate } to end</p>
           
                <label htmlFor="npayment" className="form-label">
